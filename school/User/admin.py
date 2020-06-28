@@ -35,8 +35,8 @@ class UserAdmin(BaseUserAdmin):
     form = BaseUserChangeForm
     add_form = BaseUserCreationForm
 
-    list_display = ('email', 'is_admin')
-    list_filter = ('is_admin')
+    list_display = ('email', 'is_admin',)
+    list_filter = ('is_admin',)
 
     fieldsets = (
         (None, {'fields' : ('email', 'password')}),
@@ -57,4 +57,4 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 admin.site.register(Userobject, UserAdmin)
-admin.site.unregister(Group)
+#admin.site.unregister(Group)
