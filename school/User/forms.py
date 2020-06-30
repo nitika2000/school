@@ -9,7 +9,7 @@ class BaseUserCreationForm(forms.ModelForm):
 
     class Meta:
         model = Userobject
-        fields = ('email',)
+        fields = ('email','name',)
     
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
@@ -20,7 +20,7 @@ class BaseUserCreationForm(forms.ModelForm):
         return password2
 
     def save(self, commit = True):
-        user = super().save(commit=False)
+        user = super(BaseUserCreationForm).save(commit=False)
         user.set_password(self.cleaned_data['password1'])
         if commit:
             user.save()
@@ -35,3 +35,18 @@ class BaseUserChangeForm(forms.ModelForm):
 
     def clean_password(self):
         return self.initial['password']
+
+class UserRegisterForm(forms.ModelForm):
+    class Meta:
+        model = Userobject
+        fields = ('email', 'password','name',)
+    
+    email = forms.CharField(widget=forms.EmailInput(
+        attrs={'placeholder': 'Email Address', 'class': 'col-md-12', 'required': 'required'}
+    ))
+    name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Name', 'class': 'col-md-12 mb-3 mb-md-0', 'required': 'required'}
+    ))
+    password = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Password', 'class':'col-md-12 mb-3 mb-md-0', 'required': 'required'}
+    ))
