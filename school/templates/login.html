@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+
+<div class="site-section bg-light">
+    <div class="container">
+      <div class="row">
+     
+        <div class="col-md-12 col-lg-8 mb-5">
+        
+          <form action="" class="p-5 bg-white" method="POST">{%csrf_token%}
+            <!-- <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Email Address">
+              </div>
+            </div> -->
+            {{form.name}}
+            {{form.email}}
+            <!-- <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="password1">Password</label>
+                <input type="text" id="password1" class="form-control" placeholder="Password">
+              </div>
+            </div> -->
+            {{form.password}}
+
+            <!-- <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="password1">Confirm Password</label>
+                <input type="text" id="password2" class="form-control" placeholder="Confirm Password">
+              </div>
+            </div> -->
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="SignUp" class="btn btn-primary pill px-4 py-2">
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>      
+
+
+{%endblock%}

@@ -50,3 +50,13 @@ class UserRegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(
         attrs={'placeholder': 'Password', 'class':'col-md-12 mb-3 mb-md-0', 'class' : 'row form-group', 'required': 'required'}
     ))
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(
+        attrs={'placeholder': 'Email Address', 'class':'col-md-12','class': 'row form-group', 'required': 'required'}
+    ))
+    password = forms.CharField(
+        required = True, widget=forms.PasswordInput(
+            attrs={'placeholder':'Password', 'class': 'col-md-12', 'class': 'row form-group', 'required': 'required'}
+        )
+    )
