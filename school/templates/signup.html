@@ -3,6 +3,36 @@
 
 {%block content%}
 
+{%for message in messages %}
+  {%if message.level is DEFAULT_MESSAGE_LEVELS.ERROR%}
+  <div class="row justify-content-center" data-aos="fade" data-aos-delay="100">
+    <div class="col-md-8">
+      <div class="accordion unit-8" id="accordion">
+      <div class="accordion-item">
+        <h3>
+          <a class="btn-block" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">{{message}}<span class="icon"></span></a>
+        </h3>
+      </div>
+      </div>
+      </div>
+    </div>
+  {%endif%}
+{%endfor%}  
+
+{%if form.error%}
+<div class="row justify-content-center" data-aos="fade" data-aos-delay="100">
+  <div class="col-md-8">
+    <div class="accordion unit-8" id="accordion">
+    <div class="accordion-item">
+      <h3>
+        <a class="btn-block" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">Incorrect Details<span class="icon"></span></a>
+      </h3>
+    </div>
+    </div>
+    </div>
+  </div>
+{%endif%}
+
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -16,8 +46,8 @@
                   <input type="email" id="email" class="form-control" placeholder="Email Address">
                 </div>
               </div> -->
-              {{form.email}}
               {{form.name}}
+              {{form.email}}
               <!-- <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="password1">Password</label>

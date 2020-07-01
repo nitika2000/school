@@ -42,11 +42,11 @@ class UserRegisterForm(forms.ModelForm):
         fields = ('email', 'password','name',)
     
     email = forms.CharField(widget=forms.EmailInput(
-        attrs={'placeholder': 'Email Address', 'class': 'col-md-12', 'required': 'required'}
+        attrs={'placeholder': 'Email Address', 'class': 'col-md-12','class' : 'row form-group', 'required': 'required'}
     ))
     name = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Name', 'class': 'col-md-12 mb-3 mb-md-0', 'required': 'required'}
+        attrs={'placeholder': 'Name', 'class': 'col-md-12 mb-3 mb-md-0', 'class' : 'row form-group','required': 'required'}
     ))
     password = forms.CharField(widget=forms.PasswordInput(
-        attrs={'placeholder': 'Password', 'class':'col-md-12 mb-3 mb-md-0', 'required': 'required'}
+        attrs={'placeholder': 'Password', 'class':'col-md-12 mb-3 mb-md-0', 'class' : 'row form-group', 'required': 'required'}
     ))
