@@ -27,7 +27,7 @@ def SignUpView(request):
             )
             return redirect('accounts: home')
         else:
-            if Userobject.object.is_email_registered(email = email.request.POST['email']):
+            if Userobject.object.is_email_registered(email = request.POST['email']):
                 # messages.error(
                 #     request, 'Given Email address is already registered'
                 # )

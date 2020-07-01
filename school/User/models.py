@@ -32,6 +32,11 @@ class UserManager(BaseUserManager):
         user.admin = True
         user.save(using=self._db)
         return user
+    def is_email_registered(self, email):
+        user = self.filter(email=email)
+        if user.count() > 0:
+            return True
+        return False
 
 class Userobject(AbstractBaseUser):
     email = models.EmailField(
@@ -41,8 +46,8 @@ class Userobject(AbstractBaseUser):
     name = models.CharField(
         max_length=100, null = False, blank=False,
     )
-    is_active = models.BooleanField(True)
-    is_admin = models.BooleanField(False)
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
