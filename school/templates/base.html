@@ -50,7 +50,7 @@
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2 class="mb-0 site-logo"><a href="{%url 'home'%}">Klas<strong class="font-weight-bold">Class</strong> </a></h2>
+                <h2 class="mb-0 site-logo"><a href="{%url 'User:home'%}">Klas<strong class="font-weight-bold">Class</strong> </a></h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">
@@ -58,7 +58,7 @@
                     <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                      <li class="active"><a href="{%url 'about'%}">About Us</a></li>
+                      <li class="active"><a href="{%url 'User:about'%}">About Us</a></li>
                       <!-- <li><a href="#">Contact</a></li> -->
                       {% if user.is_authenticated %}
                       <li class="active"><a href="#">My Classes</a></li>
@@ -73,12 +73,12 @@
                         <a href="#">{{user.name}}</a>
                           <ul class="dropdown arrow-top">
                           <li><a href="#">Change Password</a></li>
-                          <li><a href="#">Logout</a></li>
+                          <li><a href="{%url 'User:logout'%}">Logout</a></li>
                           </ul>
                       </li>
                       {%else%}
-                      <li><a href="{%url 'login'%}"><span class="bg-primary text-white py-3 px-4 rounded">Login</span></a></li>
-                      <li><a href="{%url 'signup'%}"><span class="bg-primary text-white py-3 px-4 rounded">Sign Up</span></a></li>
+                      <li><a href="{%url 'User:login'%}"><span class="bg-primary text-white py-3 px-4 rounded">Login</span></a></li>
+                      <li><a href="{%url 'User:signup'%}"><span class="bg-primary text-white py-3 px-4 rounded">Sign Up</span></a></li>
                       {%endif%}
                     </ul>
                   </div>
@@ -110,7 +110,7 @@
           <div class="col-md-6">
             <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
               <ul class="list-unstyled">
-                <li><a href="{%url 'about'%}">About</a></li>
+                <li><a href="{%url 'User:about'%}">About</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Approach</a></li>
                 <li><a href="#">Sustainability</a></li>
