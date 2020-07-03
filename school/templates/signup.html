@@ -3,6 +3,12 @@
 
 {%block content%}
 
+<div class="unit-5 overlay" style="background-image: url('{%static 'images/classroom2.jpg'%}');">
+  <div class="container text-center">
+    <h2 class="mb-0">Sign Up</h2>
+    <p class="mb-0 unit-6"><a href="{%url 'home'%}">Home</a> <span class="sep">></span> <span>Sign Up</span></p>
+  </div>
+</div>
 <!-- {%for message in messages %}
   {%if message.level is DEFAULT_MESSAGE_LEVELS.ERROR%}
   <div class="row justify-content-center" data-aos="fade" data-aos-delay="100">
@@ -72,6 +78,13 @@
   
             </form>
           </div>
+          <div class="col-lg-4">
+            <div class="p-4 mb-3 bg-white">
+              <div class="img-border">
+                  <img src="{%static 'images/classroom2.jpg'%}" alt="Image" class="img-fluid rounded">
+              </div>
+              </div>
+            </div>
         </div>
         </div>
     </div>      

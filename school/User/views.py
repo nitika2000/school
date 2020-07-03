@@ -6,8 +6,10 @@ from .forms import UserRegisterForm, LoginForm
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 
-class HomeView(TemplateView):
-    template_name = 'home.html'
+def HomeView(request):
+    if Userobject.is_authenticated:
+        print("momo")
+    return render(request,'home.html')
 
 class AboutUsView(TemplateView):
     template_name = 'about.html'
@@ -25,13 +27,13 @@ def SignUpView(request):
             messages.success(
                 request, "Registeration Successfull"
             )
-            return redirect('User: home')
+            return redirect('User:home')
         else:
             if Userobject.object.is_email_registered(email = request.POST['email']):
                 # messages.error(
                 #     request, 'Given Email address is already registered'
                 # )
-                print("Given Email is registerede")
+                print("Given Email is registered")
             else:
                 print("Incorrect Details")
                 # messages.error(request, 'Incorrect Details')
@@ -60,3 +62,7 @@ def LoginView(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form':form})
+
+def LogoutView(request):
+    logout(request)
+    return redirect('User:home')

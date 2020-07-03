@@ -25,7 +25,7 @@ SECRET_KEY = 'jrz&@a!vf@i0enu84q=gmgr-pyvb#(mbsphf$hh38=ryc@s-5i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
